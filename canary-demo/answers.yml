@@ -40,7 +40,7 @@ prometheus_metrics:
 rollback_test:
   previous_revision: 2 #TODO: Enter the revision number before rollback
   rollback_command_used: helm rollback canary-demo 1 -n canary-demo #TODO: Enter the helm rollback command you used
-  time_to_rollback_seconds: 0.890 #TODO: Enter how long the rollback took to complete
+  time_to_rollback_seconds: 0.155 #TODO: Enter how long the rollback took to complete
 
 # Error Budget Calculation (based on 99.9% SLO)
 error_budget:
@@ -49,5 +49,6 @@ error_budget:
 
 # Additional Observations
 observations:
-  unexpected_behaviors:  I encountered challenge with getting metrics from the grafana dashboard and prometheus UI both showing no data. Also I did not get any error and was unable to debug the issue but that to a solution from one course buddy in the channel. #TODO: List any unexpected behaviors you observed
+  unexpected_behaviors:  I encountered challenge with getting metrics from the grafana dashboard and prometheus UI both showing no data. 
+                         I was unable to debug cause I did not get any error and i am new to helm, the solutio I got to resolve it was from a buddy in the course channel. #TODO: List any unexpected behaviors you observed
   suggested_improvements: I don't think I have much to say about areas of improvement. #TODO: List any improvements you would suggest
