@@ -5,8 +5,8 @@ pods_status:
 
 # Service Information
 service_endpoints:
-  main_service_cluster_ip: 10.98.20.46 #TODO: Enter the ClusterIP of main service
-  canary_service_cluster_ip:  10.110.148.136  #TODO: Enter the ClusterIP of canary service
+  main_service_cluster_ip: 10.101.68.8 #TODO: Enter the ClusterIP of main service
+  canary_service_cluster_ip:  10.101.59.221  #TODO: Enter the ClusterIP of canary service
 
 # Ingress Information
 ingress_details:
@@ -15,32 +15,32 @@ ingress_details:
 
 # Metrics
 main_deployment_metrics:
-  http_requests_total: 7.0 #TODO: Enter the value from main deployment's /metrics endpoint
-  process_cpu_seconds_total: 0.22 #TODO: Enter the CPU seconds from main deployment
-  process_resident_memory_bytes: 2.994176e+07 #TODO: Enter the memory usage from main deployment
+  http_requests_total: 6.0 #TODO: Enter the value from main deployment's /metrics endpoint
+  process_cpu_seconds_total: 0.31 #TODO: Enter the CPU seconds from main deployment
+  process_resident_memory_bytes: 3.026944e+07 #TODO: Enter the memory usage from main deployment
 
 canary_deployment_metrics:
-  http_requests_total: 7.0 #TODO: Enter the value from canary deployment's /metrics endpoint
-  process_cpu_seconds_total: 0.26 #TODO: Enter the CPU seconds from canary deployment
-  process_resident_memory_bytes: 3.0715904e+07 #TODO: Enter the memory usage from canary deployment
+  http_requests_total: 5.0 #TODO: Enter the value from canary deployment's /metrics endpoint
+  process_cpu_seconds_total: 0.3 #TODO: Enter the CPU seconds from canary deployment
+  process_resident_memory_bytes: 3.0826496e+07 #TODO: Enter the memory usage from canary deployment
 
 # Traffic Distribution Test
 traffic_test_results:
   total_requests_sent: 20 #TODO: Enter how many test requests you sent (should be 20)
-  main_responses_received: 15 #TODO: Enter how many responses were from main deployment
-  canary_responses_received: 5 #TODO: Enter how many responses were from canary deployment
-  actual_canary_percentage: 25% #TODO: Calculate the actual percentage of canary traffic
+  main_responses_received: 16 #TODO: Enter how many responses were from main deployment
+  canary_responses_received: 4 #TODO: Enter how many responses were from canary deployment
+  actual_canary_percentage: 20% #TODO: Calculate the actual percentage of canary traffic
 
 # Prometheus Queries
 prometheus_metrics:
-  main_request_rate: #TODO: Enter the result of rate(http_requests_total{version="v1"}[5m])
-  canary_request_rate: #TODO: Enter the result of rate(http_requests_total{version="v2"}[5m])
+  main_request_rate: 0.00454 #TODO: Enter the result of rate(http_requests_total{version="v1"}[5m])
+  canary_request_rate: 0.00403 #TODO: Enter the result of rate(http_requests_total{version="v2"}[5m])
 
 # Rollback Test
 rollback_test:
   previous_revision: 2 #TODO: Enter the revision number before rollback
   rollback_command_used: helm rollback canary-demo 1 -n canary-demo #TODO: Enter the helm rollback command you used
-  time_to_rollback_seconds: 0.158 #TODO: Enter how long the rollback took to complete
+  time_to_rollback_seconds: 0.890 #TODO: Enter how long the rollback took to complete
 
 # Error Budget Calculation (based on 99.9% SLO)
 error_budget:
@@ -49,5 +49,5 @@ error_budget:
 
 # Additional Observations
 observations:
-  unexpected_behaviors: #TODO: List any unexpected behaviors you observed
-  suggested_improvements: #TODO: List any improvements you would suggest
+  unexpected_behaviors:  I encountered challenge with getting metrics from the grafana dashboard and prometheus UI both showing no data. Also I did not get any error and was unable to debug the issue but that to a solution from one course buddy in the channel. #TODO: List any unexpected behaviors you observed
+  suggested_improvements: I don't think I have much to say about areas of improvement. #TODO: List any improvements you would suggest
